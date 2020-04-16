@@ -162,6 +162,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="LoginPage.aspx" />
+    <Content Include="SettingsPage.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -248,6 +250,18 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPage.aspx.cs">
+      <DependentUpon>SettingsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPage.aspx.designer.cs">
+      <DependentUpon>SettingsPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
