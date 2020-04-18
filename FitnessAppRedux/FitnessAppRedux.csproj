@@ -163,7 +163,9 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="LoginPage.aspx" />
+    <Content Include="pm_styles.css" />
     <Content Include="SettingsPage.aspx" />
+    <Content Include="PhysicalMetrics.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -262,6 +264,13 @@
     </Compile>
     <Compile Include="SettingsPage.aspx.designer.cs">
       <DependentUpon>SettingsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PhysicalMetrics.aspx.cs">
+      <DependentUpon>PhysicalMetrics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhysicalMetrics.aspx.designer.cs">
+      <DependentUpon>PhysicalMetrics.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
