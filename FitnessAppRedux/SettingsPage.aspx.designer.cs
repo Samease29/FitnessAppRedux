@@ -21,7 +21,6 @@ namespace FitnessApp.Controllers
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
         /// Button1 control.
@@ -30,7 +29,6 @@ namespace FitnessApp.Controllers
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
         /// Button2 control.
@@ -39,7 +37,6 @@ namespace FitnessApp.Controllers
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
         /// Button3 control.
@@ -48,6 +45,5 @@ namespace FitnessApp.Controllers
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
     }
 }
