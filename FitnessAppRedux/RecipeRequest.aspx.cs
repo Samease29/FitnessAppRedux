@@ -6,6 +6,7 @@ using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json.Linq;
 
 namespace FitnessAppRedux
 {
@@ -24,12 +25,31 @@ namespace FitnessAppRedux
             WebResponse response = request.GetResponse();
             using (Stream dataStream = response.GetResponseStream())
             {
-                // Open the stream using a StreamReader for easy access.
-                StreamReader reader = new StreamReader(dataStream);
-                // Read the content.
-                string responseFromServer = reader.ReadToEnd();
-                // Display the content.
-                Console.WriteLine(responseFromServer);
+                StreamReader reader = new StreamReader(dataStream);// Open the stream using a StreamReader for easy access
+                string responseFromServer = reader.ReadToEnd();// Holds the String that is basically the JSON
+                var parsedData = JArray.Parse(responseFromServer);//Parses it into a JArray, basically something for us to loop through to get the data out of
+
+                resultsBox.Items.Clear();//Clear the resultsBox in case someone already made a request and is making another
+                String toAdd = "";//Using this string to build results entries. Append on titles and calories
+
+                foreach(JObject root in parsedData)//loop to pull out the title and calories for each returned recipe
+                {
+                    foreach(KeyValuePair<String, JToken> recipe in root)
+                    {
+                        if(recipe.Key.Equals("title"))
+                        {
+                            toAdd += ((String)recipe.Value);
+                            toAdd += ",\tCalories: ";
+                        }
+                        
+                        else if(recipe.Key.Equals("calories"))
+                        {
+                            toAdd += ((String)recipe.Value);
+                        }
+                    }
+                    resultsBox.Items.Add(toAdd);
+                    toAdd = "";
+                }
             }
             response.Close();
         }

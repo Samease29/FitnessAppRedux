@@ -164,6 +164,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="LoginPage.aspx" />
     <Content Include="pm_styles.css" />
+    <Content Include="RecipeRequest.aspx" />
     <Content Include="SettingsPage.aspx" />
     <Content Include="PhysicalMetrics.aspx" />
     <Content Include="ProfilePage.aspx" />
@@ -233,6 +234,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecipeRequest.aspx.cs">
+      <DependentUpon>RecipeRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecipeRequest.aspx.designer.cs">
+      <DependentUpon>RecipeRequest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -257,12 +265,14 @@
     </Compile>
     <Compile Include="LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="SettingsPage.aspx.cs">
       <DependentUpon>SettingsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SettingsPage.aspx.designer.cs">
       <DependentUpon>SettingsPage.aspx</DependentUpon>
