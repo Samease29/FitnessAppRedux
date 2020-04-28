@@ -19,7 +19,7 @@ namespace FitnessAppRedux
 
         protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
