@@ -12,6 +12,8 @@ namespace FitnessAppRedux
 {
     public partial class ProfilePage : System.Web.UI.Page
     {
+        static Dictionary<String, String> currentRecipes = new Dictionary<String, String>();//To hold the Strings to display in the list box and the image urls associated
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -19,7 +21,7 @@ namespace FitnessAppRedux
 
         protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            foodImage.ImageUrl = currentRecipes[profileResultsBox.SelectedValue];
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -37,6 +39,7 @@ namespace FitnessAppRedux
 
             //    profileResultsBox.Items.Clear();//Clear the resultsBox in case someone already made a request and is making another
             //    String toAdd = "";//Using this string to build results entries. Append on titles and calories
+                  //String imageURL = "";
 
             //    foreach (JObject root in parsedData)//loop to pull out the title and calories for each returned recipe
             //    {
@@ -52,8 +55,14 @@ namespace FitnessAppRedux
             //            {
             //                toAdd += ((String)recipe.Value);
             //            }
+                          //else if (recipe.Key.Equals("image"))
+                          //{
+                          //    imageURL = ((String)recipe.Key);
+                          //}
             //        }
             //        profileResultsBox.Items.Add(toAdd);
+            //        currentRecipes.Add(toAdd, imageURL);
+            //        imageURL = "";
             //        toAdd = "";
             //    }
             //}
