@@ -2,11 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace FitnessAppRedux
 {
@@ -28,7 +24,7 @@ namespace FitnessAppRedux
         protected void Button1_Click(object sender, EventArgs e)
         {
             //commented out here but once the page is made we can use this code to start getting data based the profile from the api
-            int maxcals = Int32.Parse(caloriesText.Text);//this needs to be changed to whatever actually will parse an int, will change once page is updated
+            int maxcals = Int32.Parse(calories.Text);//this needs to be changed to whatever actually will parse an int, will change once page is updated
             int mincals = maxcals / 3;
             WebRequest request = WebRequest.Create("https://api.spoonacular.com/recipes/findByNutrients?minCalories=" + mincals + "&maxCalories=" + maxcals + "&number=10&apiKey=a1b8fa50293f4158a5a46e6fc461ae31");
             WebResponse response = request.GetResponse();
