@@ -27,7 +27,7 @@
                 <p>What meals do you typically eat everyday? Select all that apply.</p>
                 <br />
                 <label for="breakfast">Breakfast:</label>
-                <asp:CheckBox ID="breakfast" runat="server" TabIndex="3" />
+                <asp:CheckBox ID="breakfast" runat="server" TabIndex="3" OnCheckedChanged="breakfast_CheckedChanged" />
                 <br />
                 <label for="lunch">Lunch:</label>
                 <asp:CheckBox ID="lunch" runat="server" TabIndex="4" />

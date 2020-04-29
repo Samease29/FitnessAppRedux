@@ -106,5 +106,39 @@ namespace FitnessAppRedux.Utilities
                 return 0;
             }
         }
+
+        public static List<string> profilePopulate(string username)
+        {
+            SqlDataReader dr;
+            List<string> result = new List<string>();
+            string[] results = { "Height", "Weight", "Sex", "Age", "Tdee" };
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    using(SqlCommand profileCmd = new SqlCommand("SELECT Height, Weight, Sex, Age, Tdee  FROM [User] WHERE Username = @UserName", conn))
+                    {
+                        profileCmd.Parameters.Add("@Username", SqlDbType.VarChar, 50);
+                        profileCmd.Parameters["@Username"].Value = username;
+                        conn.Open();
+
+                        dr = profileCmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            foreach(string entry in results)
+                            {
+                                result.Add(Convert.ToString(dr[entry]));
+                            }
+                        }
+                    }
+                }
+                return result;
+            }
+            catch(SqlException e)
+            {
+                //do nothing
+                return null;
+            }
+        }
     }
 }

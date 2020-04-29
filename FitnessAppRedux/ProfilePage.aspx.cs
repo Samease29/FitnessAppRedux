@@ -17,6 +17,7 @@ namespace FitnessAppRedux
         protected void Page_Load(object sender, EventArgs e)
         {
 
+                
         }
 
         protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,6 +68,16 @@ namespace FitnessAppRedux
             //    }
             //}
             //response.Close();
+        }
+
+        protected void buttonUser_Click(object sender, EventArgs e)
+        {
+            List<string> profile = Utilities.SqlQueries.profilePopulate(textUser.Text);
+            height.Text = profile[0] + " Inches";
+            weight.Text = profile[1] + " Pounds";
+            sex.Text = profile[2];
+            age.Text = profile[3];
+            calories.Text = profile[4];
         }
     }
 }

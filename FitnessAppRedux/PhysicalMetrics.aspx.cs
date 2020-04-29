@@ -41,5 +41,10 @@ namespace FitnessAppRedux
             lunch.Checked = false;
             dinner.Checked = false;
         }
+
+        protected void breakfast_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

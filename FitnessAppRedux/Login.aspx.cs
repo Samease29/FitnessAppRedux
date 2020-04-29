@@ -19,13 +19,16 @@ namespace FitnessAppRedux
             int login = Utilities.SqlQueries.loginUser(textUser.Text, textPass.Text);
             if(login == 1)
             {
-                Response.Redirect("~/ProfilePage.aspx");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "OpenWindow", "window.open('ProfilePage.aspx','_newtab');", true);
+                //Response.Write("~/ProfilePage.aspx");
+                //Response.Redirect("~/ProfilePage.aspx");
             }
             else
             {
                 textUser.Text = "";
                 textPass.Text = "";
                 labelMsg.Text = "Invalid username/password";
+
             }
         }
 
