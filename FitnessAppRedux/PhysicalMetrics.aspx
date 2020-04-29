@@ -35,8 +35,8 @@
                 <label for="dinner">Dinner:</label>
                 <asp:CheckBox ID="dinner" runat="server" TabIndex="5" />
                 <br />
-                <asp:Button ID="submit" runat="server" Text="Submit" TabIndex="6" />
-                <asp:Button ID="reset" runat="server" Text="Reset" TabIndex="7" />
+                <asp:Button ID="submit" runat="server" Text="Submit" TabIndex="6" OnClick="submit_Click" />
+                <asp:Button ID="reset" runat="server" Text="Reset" TabIndex="7" OnClick="reset_Click" />
             </div>
         </div>
     </form>
