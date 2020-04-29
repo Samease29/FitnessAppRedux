@@ -32,6 +32,7 @@
             </tr>
             <tr>
                 <td><asp:Button ID="Button2" runat="server" Text="Login" OnClick="Button2_Click1"></asp:Button></td>
+                <td><asp:Button ID="buttonUser" runat="server" Text="New User?" OnClick="buttonUser_Click"></asp:Button></td>
             </tr>
             <tr>
                 <td><asp:Label ID="labelMsg" ForeColor="red" runat="server" Text=""></asp:Label></td>
