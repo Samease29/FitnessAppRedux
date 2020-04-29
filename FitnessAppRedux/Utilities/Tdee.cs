@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FitnessApp
+namespace FitnessAppRedux.Utilities
 {
     public class TDEE
     {
-        public static double Bmr(string sex, double pound, double inch, double age)
+        public static double Bmr(string sex, double pound, double inch, int age)
         {
             double kg = pound * 0.453592;
             double cm = inch * 2.54;
@@ -35,23 +35,23 @@ namespace FitnessApp
             //if-else statement can change but the calculations are there
             //switch statement is technically more efficient but the low number of circumstantials doesn't make much of a difference
             double tdee = 0;
-            if (activity.Equals("sedentary"))
+            if (activity.Equals("s"))
             {
                 tdee = 1.2 * bmr;
             }
-            else if (activity.Equals("light"))
+            else if (activity.Equals("l"))
             {
                 tdee = 1.375 * bmr;
             }
-            else if (activity.Equals("moderate"))
+            else if (activity.Equals("m"))
             {
                 tdee = 1.55 * bmr;
             }
-            else if (activity.Equals("very"))
+            else if (activity.Equals("h"))
             {
                 tdee = 1.725 * bmr;
             }
-            else if (activity.Equals("extreme"))
+            else if (activity.Equals("e"))
             {
                 tdee = 1.9 * bmr;
             }
