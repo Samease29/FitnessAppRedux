@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using Newtonsoft.Json.Linq;
 
 namespace FitnessAppRedux
@@ -64,8 +60,8 @@ namespace FitnessAppRedux
             response.Close();
         }
 
-        protected void resultsBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        protected void resultsBox_SelectedIndexChanged(object sender, EventArgs e)//Used to chaange the image in the page whenever a user selects a different recipe
+        { 
             foodImage.ImageUrl = currentRecipes[resultsBox.SelectedValue];
         }
     }

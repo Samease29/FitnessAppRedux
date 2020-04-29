@@ -23,7 +23,8 @@
         <div style="margin-left: 280px">
             <br />
             <br />
-            <asp:ListBox ID="profileResultsBox" runat="server" Height="225px" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" Width="600px"></asp:ListBox>
+            <asp:ListBox ID="profileResultsBox" runat="server" Height="225px" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" Width="600px" AutoPostBack="True"></asp:ListBox>
+            <asp:Image ID="foodImage" runat="server" ImageUrl="https://spoonacular.com/images/spoonacular-logo-b.svg" />
         </div>
     </form>
 </body>
