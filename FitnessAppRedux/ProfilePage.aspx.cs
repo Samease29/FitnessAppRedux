@@ -26,47 +26,48 @@ namespace FitnessAppRedux
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //commented out here but once the page is made we can use this code to start getting data based the profile from the API
-            //int maxCals = caloriesLabel.paresInt();//this needs to be changed to whatever actually will parse an int, will change once page is updated
-            //int minCals = maxCals / 3;
-            //WebRequest request = WebRequest.Create("https://api.spoonacular.com/recipes/findByNutrients?minCalories=" + minCals + "&maxCalories=" + maxCals + "&number=10&apiKey=a1b8fa50293f4158a5a46e6fc461ae31");
-            //WebResponse response = request.GetResponse();
-            //using (Stream dataStream = response.GetResponseStream())
-            //{
-            //    StreamReader reader = new StreamReader(dataStream);// Open the stream using a StreamReader for easy access
-            //    string responseFromServer = reader.ReadToEnd();// Holds the String that is basically the JSON
-            //    var parsedData = JArray.Parse(responseFromServer);//Parses it into a JArray, basically something for us to loop through to get the data out of
+            //commented out here but once the page is made we can use this code to start getting data based the profile from the api
+            int maxcals = Int32.Parse(caloriesText.Text);//this needs to be changed to whatever actually will parse an int, will change once page is updated
+            int mincals = maxcals / 3;
+            WebRequest request = WebRequest.Create("https://api.spoonacular.com/recipes/findByNutrients?minCalories=" + mincals + "&maxCalories=" + maxcals + "&number=10&apiKey=a1b8fa50293f4158a5a46e6fc461ae31");
+            WebResponse response = request.GetResponse();
+            using (Stream datastream = response.GetResponseStream())
+            {
+                StreamReader reader = new StreamReader(datastream);// open the stream using a streamreader for easy access
+                string responsefromserver = reader.ReadToEnd();// holds the string that is basically the json
+                var parseddata = JArray.Parse(responsefromserver);//parses it into a jarray, basically something for us to loop through to get the data out of
 
-            //    profileResultsBox.Items.Clear();//Clear the resultsBox in case someone already made a request and is making another
-            //    String toAdd = "";//Using this string to build results entries. Append on titles and calories
-                  //String imageURL = "";
+                profileResultsBox.Items.Clear();//clear the resultsbox in case someone already made a request and is making another
+                string toadd = "";//using this string to build results entries. append on titles and calories
+                string imageurl = "";
 
-            //    foreach (JObject root in parsedData)//loop to pull out the title and calories for each returned recipe
-            //    {
-            //        foreach (KeyValuePair<String, JToken> recipe in root)
-            //        {
-            //            if (recipe.Key.Equals("title"))
-            //            {
-            //                toAdd += ((String)recipe.Value);
-            //                toAdd += ",\tCalories: ";
-            //            }
+                foreach (JObject root in parseddata)//loop to pull out the title and calories for each returned recipe
+                {
+                   foreach (KeyValuePair<String, JToken> recipe in root)
+                    {
+                        if (recipe.Key.Equals("title"))
+                        {
+                            toadd += ((String)recipe.Value);
+                            toadd += ",\tcalories: ";
+                        }
 
-            //            else if (recipe.Key.Equals("calories"))
-            //            {
-            //                toAdd += ((String)recipe.Value);
-            //            }
-                          //else if (recipe.Key.Equals("image"))
-                          //{
-                          //    imageURL = ((String)recipe.Key);
-                          //}
-            //        }
-            //        profileResultsBox.Items.Add(toAdd);
-            //        currentRecipes.Add(toAdd, imageURL);
-            //        imageURL = "";
-            //        toAdd = "";
-            //    }
-            //}
-            //response.Close();
+                        else if (recipe.Key.Equals("calories"))
+                        {
+                            toadd += ((String)recipe.Value);
+                        }
+
+                        else if (recipe.Key.Equals("image"))
+                        {
+                            imageurl = ((String)recipe.Value);
+                        }
+                    }
+                    profileResultsBox.Items.Add(toadd);
+                    currentRecipes.Add(toadd, imageurl);
+                    imageurl = "";
+                    toadd = "";
+                }
+            }
+            response.Close();
         }
     }
 }

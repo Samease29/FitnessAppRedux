@@ -26,7 +26,7 @@
         <label for="age">Age: </label>
         <asp:TextBox ID="age" runat="server"></asp:TextBox>
         <label for="calories">Calories: </label>
-        <asp:TextBox ID="calories" runat="server"></asp:TextBox>
+        <asp:TextBox ID="caloriesText" runat="server"></asp:TextBox>
             </div>
         </div>
         
