@@ -28,5 +28,10 @@ namespace FitnessAppRedux
                 labelMsg.Text = "Invalid username/password";
             }
         }
+
+        protected void buttonUser_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/CreateUser.aspx");
+        }
     }
 }
