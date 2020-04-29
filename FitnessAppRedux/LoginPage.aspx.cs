@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace FitnessApp.Controllers
+namespace FitnessAppRedux
 {
     public partial class LoginPage : System.Web.UI.Page
     {

@@ -11,7 +11,7 @@ namespace FitnessApp.Controllers
 {
 
 
-    public partial class WebForm1
+    public partial class SettingsPage
     {
 
         /// <summary>

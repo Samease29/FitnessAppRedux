@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FitnessApp.Controllers
+namespace FitnessAppRedux
 {
 
 
-    public partial class WebForm1
+    public partial class LoginPage
     {
 
         /// <summary>
