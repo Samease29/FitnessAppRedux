@@ -28,7 +28,7 @@ namespace FitnessAppRedux
         protected void Button1_Click(object sender, EventArgs e)
         {
             //commented out here but once the page is made we can use this code to start getting data based the profile from the api
-            int maxcals = Int32.Parse(caloriesText.Text);//this needs to be changed to whatever actually will parse an int, will change once page is updated
+            int maxcals = Int32.Parse(calories.Text);//this needs to be changed to whatever actually will parse an int, will change once page is updated
             int mincals = maxcals / 3;
             WebRequest request = WebRequest.Create("https://api.spoonacular.com/recipes/findByNutrients?minCalories=" + mincals + "&maxCalories=" + maxcals + "&number=10&apiKey=a1b8fa50293f4158a5a46e6fc461ae31");
             WebResponse response = request.GetResponse();
@@ -90,7 +90,11 @@ namespace FitnessAppRedux
                     profileResultsBox.Items.Add(toadd);
                     currentRecipes.Add(toadd, imageurl);
                     macrosList = new string[] { calories, protein, fat, carbs };
-                    recipesToAdd.Add(name, macrosList);//This is where we add all the data we need to put in the databse into the dictionary
+                    carbs = carbs.TrimEnd('g');
+                    protein = protein.TrimEnd('g');
+                    fat = fat.TrimEnd('g');
+                    //recipesToAdd.Add(name, macrosList);//This is where we add all the data we need to put in the databse into the dictionary
+                    Utilities.SqlQueries.addMeal(name, Convert.ToInt32(calories), Convert.ToInt32(protein), Convert.ToInt32(fat), Convert.ToInt32(carbs));
                     imageurl = "";
                     toadd = "";
                 }

@@ -140,5 +140,43 @@ namespace FitnessAppRedux.Utilities
                 return null;
             }
         }
+
+        public static void addMeal(string meal, int calories, int protein, int carbs, int fat)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    conn.Open();
+                    using(SqlCommand profileCmd = new SqlCommand("INSERT INTO Meal (Name, Calories, Protein, Carbs, Fat) VALUES (@Name, @Calories, @Protein, @Carbs, @Fat)", conn))
+                    {
+                        profileCmd.Parameters.Add("@Name", SqlDbType.VarChar, 50);
+                        profileCmd.Parameters.Add("@Calories", SqlDbType.Int);
+                        profileCmd.Parameters.Add("@Protein", SqlDbType.Int);
+                        profileCmd.Parameters.Add("@Carbs", SqlDbType.Int);
+                        profileCmd.Parameters.Add("@Fat", SqlDbType.Int);
+                        profileCmd.Parameters["@Name"].Value = meal;
+                        profileCmd.Parameters["@Calories"].Value = calories;
+                        profileCmd.Parameters["@Protein"].Value = protein;
+                        profileCmd.Parameters["@Carbs"].Value = carbs;
+                        profileCmd.Parameters["@Fat"].Value = fat;
+
+                        int result = profileCmd.ExecuteNonQuery();
+                        if(result < 0)
+                        {
+                            System.Diagnostics.Debug.WriteLine("Error adding meal");
+                        }
+                        else
+                        {
+                            System.Diagnostics.Debug.WriteLine("Meal added");
+                        }
+                    }
+                }
+            }
+            catch(SqlException e)
+            {
+                //do nothing
+            }
+        }
     }
 }
