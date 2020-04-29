@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
+using FitnessAppRedux.Utilities;
 
 namespace FitnessAppRedux
 {
@@ -12,11 +14,6 @@ namespace FitnessAppRedux
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
-        {
-            
         }
     }
 }

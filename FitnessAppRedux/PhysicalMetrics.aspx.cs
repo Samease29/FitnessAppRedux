@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using FitnessAppRedux.Utilities;
 
 namespace FitnessAppRedux
 {
@@ -12,6 +13,33 @@ namespace FitnessAppRedux
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void submit_Click(object sender, EventArgs e)
+        {
+            height.Text = "";
+            weight.Text = "";
+            breakfast.Checked = false;
+            lunch.Checked = false;
+            dinner.Checked = false;
+            DateTime birthdayAsDate = DateTime.ParseExact(birthday.Text, "mm/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            long birthdayAsLong = birthdayAsDate.Ticks;
+            long present = DateTime.Now.Ticks;
+            long ticksSinceBirth = present - birthdayAsLong;
+            double age = ticksSinceBirth / (TimeSpan.TicksPerDay * 365);
+            String username = "";//Need to figure out how we're handling knowing who's info to update
+            Boolean success = Helper.submit_Metrics_Query(username, height.Text, weight.Text, breakfast.Checked, lunch.Checked, dinner.Checked);
+
+        }
+
+        protected void reset_Click(object sender, EventArgs e)
+        {
+            height.Text = "";
+            weight.Text = "";
+            birthday.Text = "";
+            breakfast.Checked = false;
+            lunch.Checked = false;
+            dinner.Checked = false;
         }
     }
 }
