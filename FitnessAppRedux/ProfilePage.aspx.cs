@@ -86,7 +86,11 @@ namespace FitnessAppRedux
                     profileResultsBox.Items.Add(toadd);
                     currentRecipes.Add(toadd, imageurl);
                     macrosList = new string[] { calories, protein, fat, carbs };
-                    recipesToAdd.Add(name, macrosList);//This is where we add all the data we need to put in the databse into the dictionary
+                    carbs = carbs.TrimEnd('g');
+                    protein = protein.TrimEnd('g');
+                    fat = fat.TrimEnd('g');
+                    //recipesToAdd.Add(name, macrosList);//This is where we add all the data we need to put in the databse into the dictionary
+                    Utilities.SqlQueries.addMeal(name, Convert.ToInt32(calories), Convert.ToInt32(protein), Convert.ToInt32(fat), Convert.ToInt32(carbs));
                     imageurl = "";
                     toadd = "";
                 }
