@@ -61,7 +61,7 @@ namespace FitnessAppRedux
         }
 
         protected void resultsBox_SelectedIndexChanged(object sender, EventArgs e)//Used to chaange the image in the page whenever a user selects a different recipe
-        {
+        { 
             foodImage.ImageUrl = currentRecipes[resultsBox.SelectedValue];
         }
     }
