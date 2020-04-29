@@ -13,6 +13,7 @@
 #container {
     min-height: 100%;
     position: relative;
+    padding-top: 15px;
 }
 
 #main {

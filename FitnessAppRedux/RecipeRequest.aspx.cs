@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using Newtonsoft.Json.Linq;
 
 namespace FitnessAppRedux
 {
     public partial class RecipeRequest : System.Web.UI.Page
     {
+        static Dictionary<String, String> currentRecipes = new Dictionary<String, String>();//To hold the Strings to display in the list box and the image urls associated
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -31,7 +29,8 @@ namespace FitnessAppRedux
 
                 resultsBox.Items.Clear();//Clear the resultsBox in case someone already made a request and is making another
                 String toAdd = "";//Using this string to build results entries. Append on titles and calories
-
+                String imageURL = "";
+                currentRecipes.Clear();
                 foreach(JObject root in parsedData)//loop to pull out the title and calories for each returned recipe
                 {
                     foreach(KeyValuePair<String, JToken> recipe in root)
@@ -46,17 +45,24 @@ namespace FitnessAppRedux
                         {
                             toAdd += ((String)recipe.Value);
                         }
+
+                        else if(recipe.Key.Equals("image"))
+                        {
+                            imageURL = ((String)recipe.Value);
+                        }
                     }
                     resultsBox.Items.Add(toAdd);
+                    currentRecipes.Add(toAdd, imageURL);
+                    imageURL = "";
                     toAdd = "";
                 }
             }
             response.Close();
         }
 
-        protected void TextBox2_TextChanged(object sender, EventArgs e)
-        {
-
+        protected void resultsBox_SelectedIndexChanged(object sender, EventArgs e)//Used to chaange the image in the page whenever a user selects a different recipe
+        { 
+            foodImage.ImageUrl = currentRecipes[resultsBox.SelectedValue];
         }
     }
 }

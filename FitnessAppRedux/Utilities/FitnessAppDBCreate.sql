@@ -3,6 +3,7 @@ CREATE TABLE [dbo].[User]
 (
 	[Id] INT NOT NULL IDENTITY, 
     [Username] VARCHAR(50) NOT NULL, 
+	[Password] VARCHAR(20) NOT NULL,
     [Height] INT NOT NULL, 
     [Weight] INT NOT NULL,
 	[Sex] VARCHAR(1) NOT NULL,
