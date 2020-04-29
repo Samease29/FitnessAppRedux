@@ -4,16 +4,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link rel="stylesheet" href="pm_styles.css" />
     <title></title>
 </head>
 <body>
+    <div id="top">
+            <h1>Recipe Requests</h1>
+                <p>Get recipes that are tailored to you.</p>
+     </div>
     <form id="form1" runat="server">
-        <div style="margin-left: 120px">
-            <p style="margin-left: 400px">
-                Recipe Request Page</p>
-        </div>
-        <p style="margin-left: 480px">
-            <asp:Label ID="Label2" runat="server" Text="Minnimum calories for your meals"></asp:Label>
+        <p style="margin-left: 385px">
+            <asp:Label ID="Label2" runat="server" Text="Minimum calories for your meals"></asp:Label>
 &nbsp;<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
         </p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

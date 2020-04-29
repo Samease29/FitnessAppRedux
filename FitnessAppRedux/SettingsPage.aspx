@@ -4,11 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link rel="stylesheet" href="pm_styles.css" />
     <title></title>
 </head>
 <body style="height: 208px">
     <form id="form1" runat="server">
-        <div>
+        <div id="top">
+            <h1>Settings</h1>
+        </div>
+        <div style="margin-top: 15px">
             Settings<br />
             <br />
             Current Username:&nbsp;&nbsp; username goes here&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
