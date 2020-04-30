@@ -141,7 +141,7 @@ namespace FitnessAppRedux.Utilities
             }
         }
 
-        public static void updatePassword(string username, string oldPassword, string newPassword)
+        public static int updatePassword(string username, string oldPassword, string newPassword)
         {
             try
             {
@@ -161,10 +161,12 @@ namespace FitnessAppRedux.Utilities
                         if (result < 0)
                         {
                             System.Diagnostics.Debug.WriteLine("Error changing password");
+                            return 0;
                         }
                         else
                         {
                             System.Diagnostics.Debug.WriteLine("Password Changed");
+                            return 1;
                         }
                     }
                 }
@@ -172,6 +174,7 @@ namespace FitnessAppRedux.Utilities
             catch(SqlException e)
             {
                 //do nothing
+                return 0;
             }
         }
 

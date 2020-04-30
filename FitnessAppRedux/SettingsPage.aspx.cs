@@ -12,20 +12,28 @@ namespace FitnessAppRedux
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            String username = "";
-            Label1.Text = username;
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text == TextBox2.Text) {
-                if (SqlQueries.updatePassword(Label1.Text, TextBox1.Text, TextBox3.Text) == 1)
-                { 
-                    
+            if (TextBox1.Text == TextBox2.Text)
+            {
+                if (SqlQueries.updatePassword(TextBox4.Text, TextBox1.Text, TextBox3.Text) == 1)
+                {
+                    Label1.Text = "Password successfully updated.";
+                }
+                else 
+                {
+                    Label1.Text = "Failed to update password.";
                 }
 
             }
-        
+            else
+            {
+                Label1.Text = "Failed to update password.";
+            }
+
         }
 
     }

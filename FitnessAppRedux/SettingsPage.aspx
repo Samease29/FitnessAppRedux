@@ -16,7 +16,7 @@
             Settings<br />
             <br />
             Current Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
             <br />
             <br />
             Current Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -33,7 +33,9 @@
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Update Password" Width="116px" />
             <br />
-
+            <br />
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+            <br />
         </div>
     </form>
 </body>
