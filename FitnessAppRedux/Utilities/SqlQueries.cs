@@ -141,6 +141,40 @@ namespace FitnessAppRedux.Utilities
             }
         }
 
+        public static void updatePassword(string username, string oldPassword, string newPassword)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    conn.Open();
+                    using(SqlCommand passwordCmd = new SqlCommand("UPDATE [User] SET Password = @NewPassword WHERE Username = @Username AND Password = @OldPassword", conn))
+                    {
+                        passwordCmd.Parameters.Add("@Username", SqlDbType.VarChar, 50);
+                        passwordCmd.Parameters.Add("@OldPassword", SqlDbType.VarChar, 20);
+                        passwordCmd.Parameters.Add("@NewPassword", SqlDbType.VarChar, 20);
+                        passwordCmd.Parameters["@Username"].Value = username;
+                        passwordCmd.Parameters["@OldPassword"].Value = oldPassword;
+                        passwordCmd.Parameters["@NewPassword"].Value = newPassword;
+
+                        int result = passwordCmd.ExecuteNonQuery();
+                        if (result < 0)
+                        {
+                            System.Diagnostics.Debug.WriteLine("Error changing password");
+                        }
+                        else
+                        {
+                            System.Diagnostics.Debug.WriteLine("Password Changed");
+                        }
+                    }
+                }
+            }
+            catch(SqlException e)
+            {
+                //do nothing
+            }
+        }
+
         public static void addMeal(string meal, int calories, int protein, int carbs, int fat)
         {
             try
