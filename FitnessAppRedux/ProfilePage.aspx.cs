@@ -16,7 +16,6 @@ namespace FitnessAppRedux
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
