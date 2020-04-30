@@ -19,9 +19,9 @@ namespace FitnessAppRedux
             int login = Utilities.SqlQueries.loginUser(textUser.Text, textPass.Text);
             if(login == 1)
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "OpenWindow", "window.open('ProfilePage.aspx','_newtab');", true);
+                //Page.ClientScript.RegisterStartupScript(this.GetType(), "OpenWindow", "window.open('ProfilePage.aspx','_newtab');", true);
                 //Response.Write("~/ProfilePage.aspx");
-                //Response.Redirect("~/ProfilePage.aspx");
+                Response.Redirect("~/ProfilePage.aspx");
             }
             else
             {

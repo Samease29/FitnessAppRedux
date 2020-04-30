@@ -164,7 +164,6 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Login.aspx" />
-    <Content Include="LoginPage.aspx" />
     <Content Include="pm_styles.css" />
     <Content Include="RecipeRequest.aspx" />
     <Content Include="SettingsPage.aspx" />
@@ -280,13 +279,6 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="LoginPage.aspx.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LoginPage.aspx.designer.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="SettingsPage.aspx.cs">
       <DependentUpon>SettingsPage.aspx</DependentUpon>
