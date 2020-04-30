@@ -8,11 +8,11 @@
     <title></title>
 </head>
 <body>
+    <form id="form1" runat="server">
     <div id="top">
             <h1>Recipe Requests</h1>
                 <p>Get recipes that are tailored to you.</p>
      </div>
-    <form id="form1" runat="server">
         <p style="margin-left: 385px">
             <asp:Label ID="Label2" runat="server" Text="Minimum calories for your meals"></asp:Label>
 &nbsp;<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>

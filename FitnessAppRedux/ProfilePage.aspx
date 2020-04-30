@@ -8,11 +8,17 @@
     <title></title>
 </head>
 <body>
+    <form id="form1" runat="server">
     <div id="top">
         <h1>My Profile</h1>
-        <p>Edit your settings here.</p>
+        <p>Edit your settings here.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/RecipeRequest.aspx">Recipe Request Page</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/PhysicalMetrics.aspx">My Metrics</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/SettingsPage.aspx">My Settings</asp:HyperLink>
+        </p>
     </div>
-    <form id="form1" runat="server">
         <div id="container">
             <label for="lblUser">Username: </label>
             <asp:TextBox ID="textUser" runat="server"></asp:TextBox>
