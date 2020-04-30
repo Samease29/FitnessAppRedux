@@ -16,7 +16,8 @@
     <AssemblyName>FitnessAppRedux</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress>false</Use64BitIISExpress>
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
     <IISExpressSSLPort>44358</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -164,10 +165,9 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Login.aspx" />
-    <Content Include="LoginPage.aspx" />
     <Content Include="pm_styles.css" />
     <Content Include="RecipeRequest.aspx" />
-    <Content Include="SettingsPage.aspx" />
+    <Content Include="Settings.aspx" />
     <Content Include="PhysicalMetrics.aspx" />
     <Content Include="ProfilePage.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -257,6 +257,13 @@
     <Compile Include="RecipeRequest.aspx.designer.cs">
       <DependentUpon>RecipeRequest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -280,20 +287,6 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="LoginPage.aspx.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LoginPage.aspx.designer.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsPage.aspx.cs">
-      <DependentUpon>SettingsPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SettingsPage.aspx.designer.cs">
-      <DependentUpon>SettingsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="PhysicalMetrics.aspx.cs">
       <DependentUpon>PhysicalMetrics.aspx</DependentUpon>

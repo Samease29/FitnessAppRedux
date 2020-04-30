@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SettingsPage.aspx.cs" Inherits="FitnessApp.Controllers.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Settings.aspx.cs" Inherits="FitnessAppRedux.Settings" %>
 
 <!DOCTYPE html>
 
@@ -28,7 +28,7 @@
             <br />
             Current Weight:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-            <asp:Button ID="Button3" runat="server" Text="Update" Width="116px" />
+            <asp:Button ID="Button3" runat="server" Text="Update" Width="116px" OnClick="Button3_Click" />
         </div>
     </form>
 </body>

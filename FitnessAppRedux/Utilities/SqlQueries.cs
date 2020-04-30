@@ -140,7 +140,7 @@ namespace FitnessAppRedux.Utilities
                 return null;
             }
         }
-
+    
         public static void updatePassword(string username, string oldPassword, string newPassword)
         {
             try
