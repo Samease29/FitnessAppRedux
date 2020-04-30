@@ -60,6 +60,15 @@ namespace FitnessAppRedux
         protected global::System.Web.UI.WebControls.TextBox textUser;
 
         /// <summary>
+        /// textPass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textPass;
+
+        /// <summary>
         /// buttonUser control.
         /// </summary>
         /// <remarks>
@@ -112,6 +121,15 @@ namespace FitnessAppRedux
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label calories;
+
+        /// <summary>
+        /// ErrorLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorLabel;
 
         /// <summary>
         /// Button1 control.
