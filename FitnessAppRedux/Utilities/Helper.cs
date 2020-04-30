@@ -10,7 +10,7 @@ namespace FitnessAppRedux.Utilities
     {
         static internal Boolean RegexUserCheck(String username)
         {
-            return Regex.IsMatch(username, "^(?=.*a-z])[A-Za-z0-9@$!%*?&]{4,50}$");
+            return Regex.IsMatch(username, "^(?=.*[a-z])[A-Za-z0-9@$!%*?&]{4,50}$");
         }
 
         static internal Boolean RegexPassCheck(String password)
