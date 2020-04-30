@@ -103,7 +103,7 @@ namespace FitnessAppRedux
             if (Utilities.Helper.RegexUserCheck(textUser.Text) && Utilities.Helper.RegexUserCheck(textPass.Text))
             {
 
-                List<string> profile = Utilities.SqlQueries.profilePopulate(textUser.Text);
+                List<string> profile = Utilities.SqlQueries.profilePopulate(textUser.Text, textPass.Text);
                 textUser.BackColor = System.Drawing.Color.White;
                 textPass.BackColor = System.Drawing.Color.White;
                 height.Text = profile[0] + " Inches";

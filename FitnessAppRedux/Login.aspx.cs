@@ -35,7 +35,9 @@ namespace FitnessAppRedux
             }
             else 
             {
-                labelMsg.Text = "Username and Password do not meet minimum requirements.";
+                textUser.Text = "";
+                textPass.Text = "";
+                labelMsg.Text = "Invalid username/password";
             }
         }
 
