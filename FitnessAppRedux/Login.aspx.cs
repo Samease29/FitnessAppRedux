@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace FitnessAppRedux
 {
@@ -35,6 +36,11 @@ namespace FitnessAppRedux
         protected void buttonUser_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/CreateUser.aspx");
+        }
+
+        private Boolean usernameRegexCheck()
+        {
+            return Regex.IsMatch(textUser.Text, "");
         }
     }
 }
