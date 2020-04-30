@@ -107,7 +107,7 @@ namespace FitnessAppRedux.Utilities
             }
         }
 
-        public static List<string> profilePopulate(string username)
+        public static List<string> profilePopulate(string username, string password)
         {
             SqlDataReader dr;
             List<string> result = new List<string>();
@@ -116,10 +116,12 @@ namespace FitnessAppRedux.Utilities
             {
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
-                    using(SqlCommand profileCmd = new SqlCommand("SELECT Height, Weight, Sex, Age, Tdee  FROM [User] WHERE Username = @UserName", conn))
+                    using(SqlCommand profileCmd = new SqlCommand("SELECT Height, Weight, Sex, Age, Tdee  FROM [User] WHERE Username = @UserName AND Password = @Password", conn))
                     {
                         profileCmd.Parameters.Add("@Username", SqlDbType.VarChar, 50);
+                        profileCmd.Parameters.Add("@Password", SqlDbType.VarChar, 20);
                         profileCmd.Parameters["@Username"].Value = username;
+                        profileCmd.Parameters["@Password"].Value = password;
                         conn.Open();
 
                         dr = profileCmd.ExecuteReader();
