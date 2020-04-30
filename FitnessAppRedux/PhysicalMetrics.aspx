@@ -11,7 +11,9 @@
     <form id="form1" runat="server">
          <div id="top">
          <h1>My Physical Metrics</h1>
-            <p>Enter your physical metrics here so they can be submitted to your profile.</p>
+            <p>Enter your physical metrics here so they can be submitted to your profile.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ProfilePage.aspx">Profile Page</asp:HyperLink>
+             </p>
           </div>
         <div id ="container">
             <div id="main">

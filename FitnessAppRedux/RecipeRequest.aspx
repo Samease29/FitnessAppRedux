@@ -11,7 +11,9 @@
     <form id="form1" runat="server">
     <div id="top">
             <h1>Recipe Requests</h1>
-                <p>Get recipes that are tailored to you.</p>
+                <p>Get recipes that are tailored to you.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ProfilePage.aspx">Profile Page</asp:HyperLink>
+            </p>
      </div>
         <p style="margin-left: 385px">
             <asp:Label ID="Label2" runat="server" Text="Minimum calories for your meals"></asp:Label>
