@@ -21,9 +21,10 @@
     </div>
         <div id="container">
             <label for="lblUser">Username: </label>
-            <asp:TextBox ID="textUser" runat="server"></asp:TextBox>
-            <asp:Button ID="buttonUser" runat="server" Text="Get User Info" OnClick="buttonUser_Click"></asp:Button> <br /><br /><br />
-            <%--<asp:Label ID="username" runat="server" ></asp:Label> <br /> <br /><br /><br />--%>
+            <asp:TextBox ID="textUser" runat="server"></asp:TextBox><br /> <br /><br /><br />
+            <label for="lblUser">Password: </label>
+            <asp:TextBox ID="textPass" runat="server" TextMode="Password"></asp:TextBox><br /> <br /><br /><br />
+             <asp:Button ID="buttonUser" runat="server" Text="Get User Info" OnClick="buttonUser_Click"></asp:Button> <br /><br /><br />
             <label for="lblHeight">Height: </label>
             <asp:Label ID="height" runat="server" ></asp:Label><br /> <br /><br /><br />
             <label for="lblWeight">Weight: </label>
@@ -34,6 +35,7 @@
             <asp:Label ID="age" runat="server" ></asp:Label><br /> <br /><br /><br />
             <label for="lblCalories">Calories: </label>
             <asp:Label ID="calories" runat="server" ></asp:Label><br /> <br /><br /><br />
+            <asp:Label ID="ErrorLabel" ForeColor="red" runat="server" Text="" ></asp:Label><br /> <br /><br /><br />
         </div>
         
         <div>       

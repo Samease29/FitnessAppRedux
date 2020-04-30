@@ -100,12 +100,24 @@ namespace FitnessAppRedux
 
         protected void buttonUser_Click(object sender, EventArgs e)
         {
-            List<string> profile = Utilities.SqlQueries.profilePopulate(textUser.Text);
-            height.Text = profile[0] + " Inches";
-            weight.Text = profile[1] + " Pounds";
-            sex.Text = profile[2];
-            age.Text = profile[3];
-            calories.Text = profile[4];
+            if (Utilities.Helper.RegexUserCheck(textUser.Text) && Utilities.Helper.RegexUserCheck(textPass.Text))
+            {
+
+                List<string> profile = Utilities.SqlQueries.profilePopulate(textUser.Text);
+                textUser.BackColor = System.Drawing.Color.White;
+                textPass.BackColor = System.Drawing.Color.White;
+                height.Text = profile[0] + " Inches";
+                weight.Text = profile[1] + " Pounds";
+                sex.Text = profile[2];
+                age.Text = profile[3];
+                calories.Text = profile[4];
+            }
+            else 
+            {
+                ErrorLabel.Text = "Username and Password do not meet minimum requirements.";
+                textUser.BackColor = System.Drawing.Color.Red;
+                textPass.BackColor = System.Drawing.Color.Red;
+            }
         }
     }
 }

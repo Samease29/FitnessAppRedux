@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Text.RegularExpressions;
 
 namespace FitnessAppRedux.Utilities
 {
     public class Helper
     {
-        static internal Boolean login_Query(String username, String password)
+        static internal Boolean RegexUserCheck(String username)
         {
-            //Login Query goes here
-            return true;
+            return Regex.IsMatch(username, "^(?=.*a-z])[A-Za-z\d@$!%*?&]{8,10}$");
         }
 
-        static internal Boolean submit_Metrics_Query(String username, String height, String weight, Boolean breakfast, Boolean lunch, Boolean dinner)
+        static internal Boolean RegexPassCheck(String password)
         {
-            return true;
+            return Regex.IsMatch(password, "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$");
         }
     }
 }
