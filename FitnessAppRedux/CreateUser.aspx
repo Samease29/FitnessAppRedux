@@ -4,18 +4,16 @@
   
 
 <html xmlns="http://www.w3.org/1999/xhtml">  
-<head runat="server">  
-    <title></title>  
-    <style type="text/css">  
-        .auto-style1 {  
-            width: 100%;  
-        }  
-    </style>  
-</head>  
+<head runat="server">
+    <link rel="stylesheet" href="pm_styles.css" />
+    <title></title>
+</head>
 <body>  
 
     <form id="form1" runat="server">
-        <h3>Create User</h3>
+        <div id="top">
+            <h1>Create User</h1>
+        </div>
         <div>
         <table>
             <tr>
