@@ -11,7 +11,7 @@ namespace FitnessAppRedux
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            RegexRequirements.Text = "Usernames must be between 4 and 50 characters with\n any combination of special characters, letters, and numbers.\n Passwords must be between 12 and 24 characters with\n at least capital letter, lowercase letter, number, and special character.";
         }
 
         protected void Button2_Click1(object sender, EventArgs e)
