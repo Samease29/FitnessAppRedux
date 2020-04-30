@@ -104,13 +104,24 @@ namespace FitnessAppRedux
             {
 
                 List<string> profile = Utilities.SqlQueries.profilePopulate(textUser.Text, textPass.Text);
-                textUser.BackColor = System.Drawing.Color.White;
-                textPass.BackColor = System.Drawing.Color.White;
-                height.Text = profile[0] + " Inches";
-                weight.Text = profile[1] + " Pounds";
-                sex.Text = profile[2];
-                age.Text = profile[3];
-                calories.Text = profile[4];
+                if (!profile[0].Equals("Height"))
+                {
+                    textUser.BackColor = System.Drawing.Color.White;
+                    textPass.BackColor = System.Drawing.Color.White;
+                    height.Text = profile[0] + " Inches";
+                    weight.Text = profile[1] + " Pounds";
+                    sex.Text = profile[2];
+                    age.Text = profile[3];
+                    calories.Text = profile[4];
+                }
+                else 
+                {
+                    textUser.Text = "";
+                    textPass.Text = "";
+                    textUser.BackColor = System.Drawing.Color.Red;
+                    textPass.BackColor = System.Drawing.Color.Red;
+                    ErrorLabel.Text = "Invalid username/password";
+                }
             }
             else 
             {

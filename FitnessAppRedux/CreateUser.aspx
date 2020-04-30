@@ -79,6 +79,7 @@
             </tr>
         </table>
         </div>
+        <asp:Label ID="RegexRequirements" runat="server" Text=""></asp:Label>
     </form>
 </body>  
 
