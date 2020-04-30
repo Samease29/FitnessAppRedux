@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SettingsPage.aspx.cs" Inherits="FitnessApp.Controllers.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SettingsPage.aspx.cs" Inherits="FitnessAppRedux.SettingsPage" %>
 
 <!DOCTYPE html>
 
@@ -16,19 +16,26 @@
             Settings<br />
             <br />
             Current Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            Current Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Update" Width="115px" />
-          
             <br />
             <br />
-            Change Password?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Re-Enter Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Update" Width="116px" />
             <br />
             <br />
-            Current Weight:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            New Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-            <asp:Button ID="Button3" runat="server" Text="Update" Width="116px" />
+            <br />
+            <br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Update Password" Width="116px" />
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+            <br />
         </div>
     </form>
 </body>
