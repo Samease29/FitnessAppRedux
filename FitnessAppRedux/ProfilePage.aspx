@@ -14,20 +14,20 @@
     </div>
     <form id="form1" runat="server">
         <div id="container">
-            <div id="main">
-                <label for="username">Username: </label>
-        <asp:TextBox ID="username" runat="server" ></asp:TextBox>
-        <label for="height">Height: </label>
-        <asp:TextBox ID="height" runat="server" Width="121px"></asp:TextBox>
-        <label for="weight">Weight: </label>
-        <asp:TextBox ID="weight" runat="server"></asp:TextBox>
-        <label for="sex">Sex: </label>
-        <asp:TextBox ID="sex" runat="server"></asp:TextBox>
-        <label for="age">Age: </label>
-        <asp:TextBox ID="age" runat="server"></asp:TextBox>
-        <label for="calories">Calories: </label>
-        <asp:TextBox ID="caloriesText" runat="server"></asp:TextBox>
-            </div>
+            <label for="lblUser">Username: </label>
+            <asp:TextBox ID="textUser" runat="server"></asp:TextBox>
+            <asp:Button ID="buttonUser" runat="server" Text="Get User Info" OnClick="buttonUser_Click"></asp:Button> <br /><br /><br />
+            <%--<asp:Label ID="username" runat="server" ></asp:Label> <br /> <br /><br /><br />--%>
+            <label for="lblHeight">Height: </label>
+            <asp:Label ID="height" runat="server" ></asp:Label><br /> <br /><br /><br />
+            <label for="lblWeight">Weight: </label>
+            <asp:Label ID="weight" runat="server" ></asp:Label><br /> <br /><br /><br />
+            <label for="lblSex">Sex: </label>
+            <asp:Label ID="sex" runat="server" ></asp:Label><br /> <br /><br /><br />
+            <label for="lblAge">Age: </label>
+            <asp:Label ID="age" runat="server" ></asp:Label><br /> <br /><br /><br />
+            <label for="lblCalories">Calories: </label>
+            <asp:Label ID="calories" runat="server" ></asp:Label><br /> <br /><br /><br />
         </div>
         
         <div>       

@@ -107,6 +107,110 @@ namespace FitnessAppRedux.Utilities
             }
         }
 
-       
+        public static List<string> profilePopulate(string username)
+        {
+            SqlDataReader dr;
+            List<string> result = new List<string>();
+            string[] results = { "Height", "Weight", "Sex", "Age", "Tdee" };
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    using(SqlCommand profileCmd = new SqlCommand("SELECT Height, Weight, Sex, Age, Tdee  FROM [User] WHERE Username = @UserName", conn))
+                    {
+                        profileCmd.Parameters.Add("@Username", SqlDbType.VarChar, 50);
+                        profileCmd.Parameters["@Username"].Value = username;
+                        conn.Open();
+
+                        dr = profileCmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            foreach(string entry in results)
+                            {
+                                result.Add(Convert.ToString(dr[entry]));
+                            }
+                        }
+                    }
+                }
+                return result;
+            }
+            catch(SqlException e)
+            {
+                //do nothing
+                return null;
+            }
+        }
+
+        public static void updatePassword(string username, string oldPassword, string newPassword)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    conn.Open();
+                    using(SqlCommand passwordCmd = new SqlCommand("UPDATE [User] SET Password = @NewPassword WHERE Username = @Username AND Password = @OldPassword", conn))
+                    {
+                        passwordCmd.Parameters.Add("@Username", SqlDbType.VarChar, 50);
+                        passwordCmd.Parameters.Add("@OldPassword", SqlDbType.VarChar, 20);
+                        passwordCmd.Parameters.Add("@NewPassword", SqlDbType.VarChar, 20);
+                        passwordCmd.Parameters["@Username"].Value = username;
+                        passwordCmd.Parameters["@OldPassword"].Value = oldPassword;
+                        passwordCmd.Parameters["@NewPassword"].Value = newPassword;
+
+                        int result = passwordCmd.ExecuteNonQuery();
+                        if (result < 0)
+                        {
+                            System.Diagnostics.Debug.WriteLine("Error changing password");
+                        }
+                        else
+                        {
+                            System.Diagnostics.Debug.WriteLine("Password Changed");
+                        }
+                    }
+                }
+            }
+            catch(SqlException e)
+            {
+                //do nothing
+            }
+        }
+
+        public static void addMeal(string meal, int calories, int protein, int carbs, int fat)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    conn.Open();
+                    using(SqlCommand profileCmd = new SqlCommand("INSERT INTO Meal (Name, Calories, Protein, Carbs, Fat) VALUES (@Name, @Calories, @Protein, @Carbs, @Fat)", conn))
+                    {
+                        profileCmd.Parameters.Add("@Name", SqlDbType.VarChar, 50);
+                        profileCmd.Parameters.Add("@Calories", SqlDbType.Int);
+                        profileCmd.Parameters.Add("@Protein", SqlDbType.Int);
+                        profileCmd.Parameters.Add("@Carbs", SqlDbType.Int);
+                        profileCmd.Parameters.Add("@Fat", SqlDbType.Int);
+                        profileCmd.Parameters["@Name"].Value = meal;
+                        profileCmd.Parameters["@Calories"].Value = calories;
+                        profileCmd.Parameters["@Protein"].Value = protein;
+                        profileCmd.Parameters["@Carbs"].Value = carbs;
+                        profileCmd.Parameters["@Fat"].Value = fat;
+
+                        int result = profileCmd.ExecuteNonQuery();
+                        if(result < 0)
+                        {
+                            System.Diagnostics.Debug.WriteLine("Error adding meal");
+                        }
+                        else
+                        {
+                            System.Diagnostics.Debug.WriteLine("Meal added");
+                        }
+                    }
+                }
+            }
+            catch(SqlException e)
+            {
+                //do nothing
+            }
+        }
     }
 }

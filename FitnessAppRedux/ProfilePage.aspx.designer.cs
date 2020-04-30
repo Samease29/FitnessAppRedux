@@ -24,13 +24,22 @@ namespace FitnessAppRedux
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// username control.
+        /// textUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox username;
+        protected global::System.Web.UI.WebControls.TextBox textUser;
+
+        /// <summary>
+        /// buttonUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button buttonUser;
 
         /// <summary>
         /// height control.
@@ -39,7 +48,7 @@ namespace FitnessAppRedux
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox height;
+        protected global::System.Web.UI.WebControls.Label height;
 
         /// <summary>
         /// weight control.
@@ -48,7 +57,7 @@ namespace FitnessAppRedux
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox weight;
+        protected global::System.Web.UI.WebControls.Label weight;
 
         /// <summary>
         /// sex control.
@@ -57,7 +66,7 @@ namespace FitnessAppRedux
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox sex;
+        protected global::System.Web.UI.WebControls.Label sex;
 
         /// <summary>
         /// age control.
@@ -66,16 +75,16 @@ namespace FitnessAppRedux
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox age;
+        protected global::System.Web.UI.WebControls.Label age;
 
         /// <summary>
-        /// caloriesText control.
+        /// calories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox caloriesText;
+        protected global::System.Web.UI.WebControls.Label calories;
 
         /// <summary>
         /// Button1 control.

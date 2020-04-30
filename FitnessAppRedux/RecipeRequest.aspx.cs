@@ -26,6 +26,14 @@ namespace FitnessAppRedux
                 StreamReader reader = new StreamReader(dataStream);// Open the stream using a StreamReader for easy access
                 string responseFromServer = reader.ReadToEnd();// Holds the String that is basically the JSON
                 var parsedData = JArray.Parse(responseFromServer);//Parses it into a JArray, basically something for us to loop through to get the data out of
+                String name, calories, protein, fat, carbs;//These are to be used to store the recipes for database stuff
+                name = "";//These all needed to be assigned so we have this gross setup
+                calories = "";
+                protein = "";
+                fat = "";
+                carbs = "";
+                String[] macrosList;
+                Dictionary<String, String[]> recipesToAdd = new Dictionary<string, string[]>();//Holds recipe names with calorie/macro data
 
                 resultsBox.Items.Clear();//Clear the resultsBox in case someone already made a request and is making another
                 String toAdd = "";//Using this string to build results entries. Append on titles and calories
@@ -39,11 +47,28 @@ namespace FitnessAppRedux
                         {
                             toAdd += ((String)recipe.Value);
                             toAdd += ",\tCalories: ";
+                            name = ((String)recipe.Value);
                         }
                         
                         else if(recipe.Key.Equals("calories"))
                         {
                             toAdd += ((String)recipe.Value);
+                            calories = ((String)recipe.Value);
+                        }
+
+                        else if(recipe.Key.Equals("protein"))
+                        {
+                            protein = ((String)recipe.Value);
+                        }
+
+                        else if(recipe.Key.Equals("fat"))
+                        {
+                            fat = ((String)recipe.Value);
+                        }
+
+                        else if(recipe.Key.Equals("carbs"))
+                        {
+                            carbs = ((String)recipe.Value);
                         }
 
                         else if(recipe.Key.Equals("image"))
@@ -53,6 +78,8 @@ namespace FitnessAppRedux
                     }
                     resultsBox.Items.Add(toAdd);
                     currentRecipes.Add(toAdd, imageURL);
+                    macrosList = new string[] {calories, protein, fat, carbs};
+                    recipesToAdd.Add(name, macrosList);//This is where we add all the data we need to put in the databse into the dictionary
                     imageURL = "";
                     toAdd = "";
                 }

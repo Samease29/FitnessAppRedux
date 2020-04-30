@@ -1,7 +1,7 @@
 ﻿body {
     font-family: Arial;
     line-height: 5px;
-    height: 290px;
+    height: 79px;
 }
 
 #top {
@@ -14,11 +14,16 @@
     min-height: 100%;
     position: relative;
     padding-top: 15px;
+    top: 0px;
+    left: 0px;
+    height: 207px;
 }
 
 #main {
-    width: 80%;
-    padding: 8px;
+    width: 85%;
     padding-bottom: 4em;
     background-color: white;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
 }
