@@ -17,6 +17,8 @@ namespace FitnessAppRedux
 
         protected void submit_Click(object sender, EventArgs e)
         {
+            //For future use
+            /*
             height.Text = "";
             weight.Text = "";
             breakfast.Checked = false;
@@ -28,7 +30,8 @@ namespace FitnessAppRedux
             long ticksSinceBirth = present - birthdayAsLong;
             double age = ticksSinceBirth / (TimeSpan.TicksPerDay * 365);
             String username = "";//Need to figure out how we're handling knowing who's info to update
-            Boolean success = Helper.submit_Metrics_Query(username, height.Text, weight.Text, breakfast.Checked, lunch.Checked, dinner.Checked);
+            */
+                       
 
         }
 
