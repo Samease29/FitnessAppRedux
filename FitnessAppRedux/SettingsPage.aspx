@@ -20,15 +20,15 @@
             <br />
             <br />
             Current Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" TextMode="Password"></asp:TextBox>
             <br />
             <br />
             Re-Enter Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
             <br />
             <br />
             New Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox3" runat="server" TextMode="Password"></asp:TextBox>
             <br />
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Update Password" Width="116px" />
