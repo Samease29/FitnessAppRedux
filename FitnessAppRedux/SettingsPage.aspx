@@ -11,6 +11,9 @@
     <form id="form1" runat="server">
         <div id="top">
             <h1>Settings</h1>
+            <p style="margin-left: 560px">
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ProfilePage.aspx">Profile Page</asp:HyperLink>
+             </p>
         </div>
         <div style="margin-top: 15px">
             Settings<br />
